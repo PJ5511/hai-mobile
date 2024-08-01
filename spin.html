@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spin</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <script>
         // 检查是否是刷新操作
         if (performance.navigation.type === 1) {
@@ -16,22 +16,28 @@
 <body>
     <div class="video-container">
         <video id="spinVideo" autoplay muted playsinline>
-            <source src="spin.mp4" type="video/mp4">
+            <source src="spin.mp4?v=1.1" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
     <script>
         document.getElementById('spinVideo').onended = function() {
             const randomValue = Math.random() * 100;
+            console.log('Random Value:', randomValue);
             if (randomValue <= 0.25) {
+                console.log('Redirecting to result1.html');
                 window.location.href = 'result1.html'; // 當筆折扣1000元
             } else if (randomValue <= 1) {
+                console.log('Redirecting to result2.html');
                 window.location.href = 'result2.html'; // 當筆95折優惠
-            } else if (randomValue <= 34) {
+            } else if (randomValue <= 34) { // 33% + 1% = 34%
+                console.log('Redirecting to result4.html');
                 window.location.href = 'result4.html'; // 品牌周邊小物
-            } else if (randomValue <= 67) {
+            } else if (randomValue <= 67) { // 33% + 34% = 67%
+                console.log('Redirecting to result5.html');
                 window.location.href = 'result5.html'; // 品牌精選首飾
             } else {
+                console.log('Redirecting to result6.html');
                 window.location.href = 'result6.html'; // 極透氣銀離子包臀內褲
             }
         };
