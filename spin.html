@@ -6,7 +6,7 @@
     <title>Spin</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // 檢查是否是刷新操作
+        // 检查是否是刷新操作
         if (performance.navigation.type === 1) {
             // 如果是刷新操作，重定向到 index.html
             window.location.href = 'index.html';
@@ -20,9 +20,6 @@
             Your browser does not support the video tag.
         </video>
     </div>
-    <canvas id="wheelcanvas" width="500" height="500"></canvas>
-    <button id="spinButton">Spin</button>
-    <script src="script.js"></script>
     <script>
         document.getElementById('spinVideo').onended = function() {
             const randomValue = Math.random() * 100;
