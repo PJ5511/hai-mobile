@@ -4,12 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const spinButton = document.getElementById('spinButton');
 
     const prizes = [
-        { name: '當筆折扣1000元', probability: 1 },
-        { name: '當筆95折優惠', probability: 4 },
-        { name: '寵愛之名 亮白黃金藻防曬霜', probability: 35 },
-        { name: '品牌周邊小物', probability: 25 },
-        { name: '品牌精選首飾', probability: 15 },
-        { name: '極透氣銀離子包臀內褲', probability: 20 }
+        { name: '當筆折扣1000元', probability: 0.25 },
+        { name: '當筆95折優惠', probability: 0.75 },
+        { name: '品牌周邊小物', probability: 33 },
+        { name: '品牌精選首飾', probability: 33 },
+        { name: '極透氣銀離子包臀內褲', probability: 33 }
     ];
 
     const prizeColors = ['#FFDDC1', '#FFABAB', '#FFC3A0', '#FF677D', '#D4A5A5', '#392F5A'];
