@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intro</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // 清除 localStorage 中的數據
+        localStorage.clear();
+
+        // 檢查視頻是否結束
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('introVideo').onended = function() {
+                window.location.href = 'steps.html';
+            };
+        });
+    </script>
 </head>
 <body>
     <div class="video-container">
@@ -13,10 +24,5 @@
             Your browser does not support the video tag.
         </video>
     </div>
-    <script>
-        document.getElementById('introVideo').onended = function() {
-            window.location.href = 'steps.html';
-        };
-    </script>
 </body>
 </html>
