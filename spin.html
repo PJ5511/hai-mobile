@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // 檢查是否是刷新操作
+        if (performance.navigation.type === 1) {
+            // 如果是刷新操作，重定向到 index.html
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="video-container">
+        <video id="spinVideo" autoplay muted playsinline>
+            <source src="spin.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        document.getElementById('spinVideo').onended = function() {
+            const randomValue = Math.random() * 100; // 0 到 100 之間的隨機值
+            console.log('Random Value:', randomValue); // 用於檢查隨機值
+
+            // 根據隨機值決定跳轉頁面
+            if (randomValue <= 0.25) {
+                window.location.href = 'result1.html'; // 當筆折扣1000元
+            } else if (randomValue <= 1) {
+                window.location.href = 'result2.html'; // 當筆95折優惠
+            } else if (randomValue <= 45) {
+                window.location.href = 'result4.html'; // 品牌周邊小物
+            } else if (randomValue <= 100) {
+                window.location.href = 'result5.html'; // 品牌精選首飾
+            } else {
+                console.error('隨機值超出範圍，無法匹配獎品。');
+                alert('出現錯誤，請重試。');
+            }
+        };
+    </script>
+</body>
+</html>
